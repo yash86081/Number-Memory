@@ -30,11 +30,13 @@ function GameResult() {
     }
     else {
         clearTimeout(oldtimer)
-        loss.textContent="You Lose!"
+        loss.textContent = "You Lose!"
+        Input.style.display = "none"
+        Submit.style.display = "none"
+        level.textContent = "Level: resetting..."
         setTimeout(function() {
             location.reload()
-        }, 2000)
-
+        }, 3000)
     }
 }
 Submit.addEventListener("click", GameResult)
