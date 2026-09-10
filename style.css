@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+#Number {
+    margin: 50px;
+    font-size: 30px;
+    color: red;
+}
+#level {
+    font-size: 20px;
+}
+#Input {
+    font-size: 20px;
+    border-radius: 20px;
+    width: 150px;
+}
+#Submit {
+    color: green;
+}
+#loss {
+    color: red;
+    font-size: 30px;
+}
