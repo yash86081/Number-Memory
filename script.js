@@ -31,6 +31,7 @@ function GameResult() {
     else {
         clearTimeout(oldtimer)
         loss.textContent="You Lose!"
+        setTimeout(location.reload(), 2000)
     }
 }
 Submit.addEventListener("click", GameResult)
