@@ -2,10 +2,12 @@ let level = document.getElementById("level")
 let Number = document.getElementById("Number")
 let Input = document.getElementById("Input")
 let Submit = document.getElementById("Submit")
+let Restart= document.getElementById("Restart")
 let loss = document.getElementById("loss")
 let process = 0;
 let oldtimer=0;
 let currentLevel = 1;
+Restart.style.display = "none"
 function resetNumber() {
     Number.textContent=""
     Input.style.display = "inline-block"
@@ -20,11 +22,14 @@ function produce() {
     oldtimer = setTimeout(resetNumber, 5000)
 }
 produce()
+function restartGame() {
+    location.reload()
+}
 function GameResult() {
     if (String(process)===Input.value) {
         clearTimeout(oldtimer)
         loss.textContent=""
-        Input.value = ""
+        Input.value=""
         currentLevel=currentLevel+1
         level.textContent= "Level: "+currentLevel
         produce()
@@ -32,12 +37,11 @@ function GameResult() {
     else {
         clearTimeout(oldtimer)
         loss.textContent = "You Lose!"
+        Restart.style.display = "inline-block"
         Input.style.display = "none"
         Submit.style.display = "none"
-        level.textContent = "Level: resetting..."
-        setTimeout(function() {
-            location.reload()
-        }, 3000)
+        level.textContent = "You were at level:"+currentLevel
     }
 }
 Submit.addEventListener("click", GameResult)
+Restart.addEventListener("click", restartGame)
