@@ -24,6 +24,7 @@ function GameResult() {
     if (String(process)===Input.value) {
         clearTimeout(oldtimer)
         loss.textContent=""
+        Input.value = ""
         currentLevel=currentLevel+1
         level.textContent= "Level: "+currentLevel
         produce()
